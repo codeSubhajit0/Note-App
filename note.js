@@ -1,6 +1,7 @@
 "use strict"
 const createBtn = document.querySelector('.create');
 const img = document.querySelector('.plus_icon');
+const noteSec = document.querySelector('.note_form');
 
 
 createBtn.addEventListener('click', function(e){
@@ -9,6 +10,7 @@ createBtn.addEventListener('click', function(e){
     createBtn.classList.add('animate');
     setTimeout(function(){
         createBtn.classList.remove('animate');
-    },250); 
+    },200); 
+    noteSec.classList.toggle('note_form_note');
 });
  

@@ -11,9 +11,12 @@ main {
     /* background: url(images/Notebook-bro.png);
     background-size: cover;
     background-repeat: no-repeat; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 img{
-    height: 100%;
+    height: 60%;
     width: 100%;
     position: absolute;
     z-index: -1;
@@ -28,7 +31,7 @@ img{
     background: #92E3A9;
 }
 .animate{
-    animation: outline 250ms ease reverse;
+    animation: outline 200ms ease reverse;
 }
 @keyframes outline {
     0%{
@@ -49,4 +52,21 @@ img{
     position: absolute;
     height: 50px;
     z-index: 2;
+}
+
+.note_form {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: red;
+    clip-path: circle(0% at 50% 50%);
+    transition: clip-path 350ms ease-out;
+}
+
+.note_form_note{
+    clip-path: circle(100% at 50% 50%);
+}
+
+.color {
+
 }

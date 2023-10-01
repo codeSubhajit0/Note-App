@@ -1,74 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+:root {
+  --color-1: #fd99ff;
+  --color-2: #ff9e9e;
+  --color-3: #91f48f;
+  --color-4: #fff599;
+  --color-5: #9effff;
+  --color-6: #b69cff;
+}
+
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 main {
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    /* background: url(images/Notebook-bro.png);
-    background-size: cover;
-    background-repeat: no-repeat; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-img{
-    height: 60%;
-    width: 100%;
-    position: absolute;
-    z-index: -1;
+img {
+  height: 60%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
 }
 
 .create {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    position: absolute;
-    inset: 80% 0 0 80% ;
-    background: #92E3A9;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  position: absolute;
+  inset: 80% 0 0 80%;
+  background: #92e3a9;
 }
-.animate{
-    animation: outline 200ms ease reverse;
+.animate {
+  animation: outline 200ms ease reverse;
 }
 @keyframes outline {
-    0%{
-        outline-offset: 10px;
-        outline: 0px solid #92E3A9;
-    }
-    50% {
-        outline-offset: 5px;
-        outline: 3px solid #92E3A9;
-    }
-    100%{
-        outline-offset: 0px;
-        outline: 8px solid #92E3A9;
-    }
+  0% {
+    outline-offset: 10px;
+    outline: 0px solid #92e3a9;
+  }
+  50% {
+    outline-offset: 5px;
+    outline: 3px solid #92e3a9;
+  }
+  100% {
+    outline-offset: 0px;
+    outline: 8px solid #92e3a9;
+  }
 }
 
 .plus_icon {
-    position: absolute;
-    height: 50px;
-    z-index: 2;
+  position: absolute;
+  height: 50px;
+  width: auto;
+  z-index: 2;
 }
 
 .note_form {
-    height: 100dvh;
-    width: 100dvw;
-    position: absolute;
-    background: red;
-    clip-path: circle(0% at 50% 50%);
-    transition: clip-path 350ms ease-out;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  clip-path: circle(0% at 50% 50%);
+  transition: clip-path 350ms ease-out;
 }
 
-.note_form_note{
-    height: 100dvh;
-    width: 100dvw;
-    clip-path: circle(100% at 50% 50%);
+.note_form_note {
+  clip-path: circle(100% at 50% 50%);
 }
 
+.colo_slide {
+  height: 80px;
+  width: 100%;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow-x: scroll;
+}
 .color {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 2px 2px 2px black;
+}
+.color:nth-child(1) {
+  background: #fd99ff;
+}
+.color:nth-child(2) {
+  background: #ff9e9e;
+}
+.color:nth-child(3) {
+  background: #91f48f;
+}
+.color:nth-child(4) {
+  background: #fff599;
+}
+.color:nth-child(5) {
+  background: #9effff;
+}
+.color:nth-child(6) {
+  background: #b69cff;
+}
+.content {
+  height: calc(100% - 86px);
+  width: 100%;
+}
 
+.heading {
+  height: 3.6rem;
+  width: 100%;
+}
+.heading > input {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  letter-spacing: 10px;
+  margin-top: none;
+}
+
+.note_txt {
+  height: 80%;
+  width: 100%;
+  resize: none;
+  border: none;
+  outline: none;
+  background: cyan;
+}
+
+.create_btn {
+  height: 10%;
+  width: 100%;
+  text-align: center;
+  /* outline: 1px solid red; */
+  background: yellowgreen;
 }

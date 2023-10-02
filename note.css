@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
 
+:root {
+    --color-1:#FD99FF;
+    --color-2:#FF9E9E;
+    --color-3:#91F48F;
+    --color-4:#FFF599;
+    --color-5:#9EFFFF;
+    --color-6:#B69CFF;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -29,8 +38,11 @@ main {
   border-radius: 50%;
   border: none;
   position: relative;
-  top: 35%;
+  top: 32%;
   left: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #newbTn > img {
     height: 40px;
@@ -74,28 +86,25 @@ main {
     width: 100%;
     position: absolute;
     z-index: 2;
-    /* background: cyan; */
     clip-path: circle(0% at 50% 50%);
     transition: clip-path 250ms ease;
 }
 
 .Nform_active {
-    /* background: cyan; */
     clip-path: circle(70.7% at 50% 50%);
 }
 
 
 .colorOPT {
     height: 10%;
-    width: 100%;
-    /* background: red; */
+    width: 96%;
+    margin: .4rem 0 0 .2rem;
     display: flex;
     align-items: center;
 }
 .colorSlide{
     height: 100%;
     width: 80%;
-    /* background: orange; */
     border-radius: .5rem;
     display: flex;
     align-items: center;
@@ -108,46 +117,71 @@ main {
     height: 100%;
     width: 20%;
     border-radius: .5rem;
-    background: greenyellow;
+    margin-left: .4rem;
+    background: var(--color-1);
     background-repeat: no-repeat;
     background-size: contain;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 1px 1px 4px 2px rgb(189, 189, 189);
 }
 .color{
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    background: blue;
+    /* background: blue; */
+    outline: 1px solid white;
+    box-shadow: 1px 1px 5px 2px rgb(167, 166, 166);
+    transition: backgro;
+}
+.color:nth-child(1){
+    background: var(--color-1);
+}
+.color:nth-child(2){
+    background: var(--color-2);
+}
+.color:nth-child(3){
+    background: var(--color-3);
+}
+.color:nth-child(4){
+    background: var(--color-4);
+}
+.color:nth-child(5){
+    background: var(--color-5);
+}
+.color:nth-child(6){
+    background: var(--color-6);
 }
 
 
 .headingSec {
     height: 10%;
-    width: 100%;
-    border-radius: 1rem 1rem 0 0;
-    background: yellow;
+    width: 98%;
+    margin: .4rem 0 0 .2rem;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 4px 2px rgb(189, 189, 189);
 }
 .heading{
     height: 100%;
     width: 100%;
     outline: none;
     border: none;
-    border-radius: 1rem 1rem 0 0;
+    border-radius: inherit;
     padding: 1rem;
     font-size: 1.2rem;
     font-weight: 10px;
     letter-spacing: .1rem;
     text-transform: uppercase;
-    background: cyan;
+    background: var(--color-1);
 }
 
 .textSec {
-    height: 70%;
-    width: 100%;
-    border-radius: 0 0 .5rem .5rem;
-    background: greenyellow;
+    height: 65%;
+    width: 98%;
+    border-radius:1rem;
+    margin: .4rem 0 0 .2rem;
+    box-shadow: 1px 1px 4px 2px rgb(189, 189, 189);
 }
 .textNote {
     height: 100%;
@@ -155,21 +189,25 @@ main {
     resize: none;
     outline: none;
     border: none;
-    background: blue;
+    border-radius: inherit;
+    background: var(--color-1);
     padding: 1rem;
     font-size: 1rem;
 }
 
 .createbTn{
     height: 10%;
-    width: 100%;
-    border-radius: 0 0 1rem 1rem;
+    width: 98%;
+    border-radius:1rem;
+    margin: .4rem .4rem 0 .2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: magenta;
+    background: var(--color-1);
     font-weight: bold;
     letter-spacing: .1rem;
+    /* outline: 2px solid black; */
+    box-shadow: 1px 1px 4px 2px rgb(189, 189, 189);
 }
 .crossBtn > img {
     transform: rotate(45deg);

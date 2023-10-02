@@ -1,16 +1,14 @@
-"use strict"
-const createBtn = document.querySelector('.create');
-const img = document.querySelector('.plus_icon');
-const noteSec = document.querySelector('.note_form');
+"use strict";
 
+const createBtn = document.querySelector("#newbTn");
+const noteForm = document.querySelector(".Nform");
 
-createBtn.addEventListener('click', function(e){
-    if(!(e.target == createBtn || e.target.closest('.create') == createBtn)) 
+createBtn.addEventListener("click", function (e) {
+  // console.log(e.target === createBtn|| e.target.closest('#newbTn') === createBtn);
+
+  if (!(e.target === createBtn || e.target.closest("#newbTn") === createBtn))
     return;
-    createBtn.classList.add('animate');
-    setTimeout(function(){
-        createBtn.classList.remove('animate');
-    },200); 
-    noteSec.classList.toggle('note_form_note');
+  // console.log('hello');
+
+  noteForm.classList.toggle("Nform_active");
 });
- 

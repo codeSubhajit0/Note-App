@@ -125,15 +125,14 @@ main {
     align-items: center;
     justify-content: center;
     box-shadow: 1px 1px 4px 2px rgb(189, 189, 189);
+    transition: background 300ms ease;
 }
 .color{
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    /* background: blue; */
     outline: 1px solid white;
     box-shadow: 1px 1px 5px 2px rgb(167, 166, 166);
-    transition: backgro;
 }
 .color:nth-child(1){
     background: var(--color-1);
@@ -174,6 +173,7 @@ main {
     letter-spacing: .1rem;
     text-transform: uppercase;
     background: var(--color-1);
+    transition: background 300ms ease;
 }
 
 .textSec {
@@ -193,6 +193,7 @@ main {
     background: var(--color-1);
     padding: 1rem;
     font-size: 1rem;
+    transition: background 300ms ease;
 }
 
 .createbTn{
@@ -208,6 +209,7 @@ main {
     letter-spacing: .1rem;
     /* outline: 2px solid black; */
     box-shadow: 1px 1px 4px 2px rgb(189, 189, 189);
+    transition: background 300ms ease;
 }
 .crossBtn > img {
     transform: rotate(45deg);

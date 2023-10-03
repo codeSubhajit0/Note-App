@@ -1,6 +1,6 @@
 "use strict";
 
-const createBtn = document.querySelector("#newbTn");
+const newBtn = document.querySelector("#newbTn");
 const noteForm = document.querySelector(".Nform");
 const crossbtn = document.querySelector('.crossBtn')
 
@@ -10,8 +10,8 @@ const createbTn = document.querySelector('.createbTn')
 const colorSlide = document.querySelector('.colorSlide')
 
 
-createBtn.addEventListener("click", function (e) {
-  if (!(e.target === createBtn || e.target.closest("#newbTn") === createBtn))
+newBtn.addEventListener("click", function (e) {
+  if (!(e.target === newBtn || e.target.closest("#newbTn") === newBtn))
     return;
   // console.log('hello');
   noteForm.classList.add("Nform_active");
@@ -32,6 +32,25 @@ colorSlide.addEventListener('click',function(e){
   createbTn.style.backgroundColor = `var(--color-${color})`;
 })
 
-createbTn.addEventListener('click',function(e){
 
+const notes = [];
+
+class App {
+  constructor(title,text){
+    this.title = title;
+    this.text = text;
+  }
+}
+
+
+createbTn.addEventListener('click',function(e){
+    // console.log('hi');
+    let NoteHeading = heading.value;
+    let NoteContent = textNote.value;
+    console.log(NoteContent);
+    heading.value = "";
+    textNote.value = "";
+    notes.push(new App(NoteHeading,NoteContent));
+    console.log(notes);
 })
+

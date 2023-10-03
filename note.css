@@ -16,6 +16,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
+body {
+    background:#252525;
+}
+
 main {
   height: 100dvh;
   width: 100dvw;
@@ -34,7 +38,7 @@ main {
 #newbTn {
   height: 50px;
   width: 50px;
-  background-color: #92e3a9;
+  background-color: #252525;
   border-radius: 50%;
   border: none;
   position: relative;
@@ -43,6 +47,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: -5px 0px 10px 0px #000000;
 }
 #newbTn > img {
     height: 40px;
@@ -124,15 +129,15 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 1px 1px 4px 2px rgb(189, 189, 189);
+    /* box-shadow: 1px 1px 4px 2px rgb(189, 189, 189); */
     transition: background 300ms ease;
 }
 .color{
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    outline: 1px solid white;
-    box-shadow: 1px 1px 5px 2px rgb(167, 166, 166);
+    /* outline: 1px solid white; */
+    /* box-shadow: 1px 1px 5px 2px rgb(167, 166, 166); */
 }
 .color:nth-child(1){
     background: var(--color-1);
@@ -159,7 +164,8 @@ main {
     width: 98%;
     margin: .4rem 0 0 .2rem;
     border-radius: 1rem;
-    box-shadow: 1px 1px 4px 2px rgb(189, 189, 189);
+    /* box-shadow: 1px 1px 4px 2px rgb(189, 189, 189); */
+      /* box-shadow: -5px 0px 10px 0px #000000; */
 }
 .heading{
     height: 100%;
@@ -171,21 +177,25 @@ main {
     font-size: 1.2rem;
     font-weight: 10px;
     letter-spacing: .1rem;
-    text-transform: uppercase;
+    color: white;
     background: var(--color-1);
     transition: background 300ms ease;
 }
+.heading::placeholder {
+    color: white;
+}
 
 .textSec {
-    height: 65%;
+    height: 65.5%;
     width: 98%;
     border-radius:1rem;
     margin: .4rem 0 0 .2rem;
-    box-shadow: 1px 1px 4px 2px rgb(189, 189, 189);
+    /* box-shadow: 1px 1px 4px 2px rgb(189, 189, 189); */
 }
 .textNote {
     height: 100%;
     width: 100%;
+    color: white;
     resize: none;
     outline: none;
     border: none;
@@ -195,10 +205,13 @@ main {
     font-size: 1rem;
     transition: background 300ms ease;
 }
-
+.textNote::placeholder {
+    color: white;
+}
 .createbTn{
     height: 10%;
     width: 98%;
+    color: white;
     border-radius:1rem;
     margin: .4rem .4rem 0 .2rem;
     display: flex;
@@ -208,7 +221,7 @@ main {
     font-weight: bold;
     letter-spacing: .1rem;
     /* outline: 2px solid black; */
-    box-shadow: 1px 1px 4px 2px rgb(189, 189, 189);
+    /* box-shadow: 1px 1px 4px 2px rgb(189, 189, 189); */
     transition: background 300ms ease;
 }
 .crossBtn > img {

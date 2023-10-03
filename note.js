@@ -9,6 +9,7 @@ const textNote = document.querySelector('.textNote')
 const createbTn = document.querySelector('.createbTn')
 const colorSlide = document.querySelector('.colorSlide')
 
+let colorMain = "var(--color-1)";
 
 newBtn.addEventListener("click", function (e) {
   if (!(e.target === newBtn || e.target.closest("#newbTn") === newBtn))
@@ -26,6 +27,7 @@ crossbtn.addEventListener('click',function(e){
 colorSlide.addEventListener('click',function(e){
   if( !(e.target.classList[0] === 'color')) return;
   let color = e.target.dataset.num;
+  colorMain = `var(--color-${color})`;
   crossbtn.style.backgroundColor = `var(--color-${color})`;
   heading.style.backgroundColor = `var(--color-${color})`;
   textNote.style.backgroundColor = `var(--color-${color})`;
@@ -36,9 +38,10 @@ colorSlide.addEventListener('click',function(e){
 const notes = [];
 
 class App {
-  constructor(title,text){
+  constructor(title,text,color){
     this.title = title;
     this.text = text;
+    this.color = color;
   }
 }
 
@@ -50,7 +53,9 @@ createbTn.addEventListener('click',function(e){
     console.log(NoteContent);
     heading.value = "";
     textNote.value = "";
-    notes.push(new App(NoteHeading,NoteContent));
+    notes.push(new App(NoteHeading,NoteContent,colorMain));
     console.log(notes);
+    console.log(window.getComputedStyle(textNote).background);
+    
 })
 

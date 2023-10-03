@@ -173,6 +173,7 @@ main {
     outline: none;
     border: none;
     border-radius: inherit;
+    resize: none;
     padding: 1rem;
     font-size: 1.2rem;
     font-weight: 10px;

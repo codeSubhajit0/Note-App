@@ -9,6 +9,9 @@ const textNote = document.querySelector('.textNote')
 const createbTn = document.querySelector('.createbTn')
 const colorSlide = document.querySelector('.colorSlide')
 
+const previos = document.querySelector('.notes');
+
+
 let colorMain = "var(--color-1)";
 
 newBtn.addEventListener("click", function (e) {
@@ -43,9 +46,29 @@ class App {
     this.text = text;
     this.color = color;
   }
+
 }
 
+const setItemToLocalstoraeg = function(){
+  localStorage.setItem("notes",JSON.stringify(notes))
+}
 
+const getItemFromLocalstorage = function(){
+  const note = JSON.parse(localStorage.getItem('notes'));
+  console.log(note);
+  prevNotes(note);
+}
+
+const prevNotes = function (notes){
+  // previos.insertAdjacentHTML = `<section class="note">${note[0].title}</section>`;
+  const newSection = document.createElement("section");
+  newSection.classList.add('note');
+  newSection.textContent = `${notes[0].title}`;
+  previos.insertBefore(newSection,previos.children[0]);
+  newSection.style.backgroundColor = notes[0].color ;
+}
+
+// Functionality of the create button
 createbTn.addEventListener('click',function(e){
     // console.log('hi');
     let NoteHeading = heading.value;
@@ -54,8 +77,11 @@ createbTn.addEventListener('click',function(e){
     heading.value = "";
     textNote.value = "";
     notes.push(new App(NoteHeading,NoteContent,colorMain));
-    console.log(notes);
-    console.log(window.getComputedStyle(textNote).background);
+    console.log(setItemToLocalstoraeg());
+    getItemFromLocalstorage();
+    // console.log(notes[0].text);
+    
+    // console.log(window.getComputedStyle(textNote).background);
     
 })
 

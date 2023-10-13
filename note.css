@@ -30,9 +30,9 @@ main {
 
 .notes {
   height: 80%;
-  width: 70%;
+  width: 80%;
   position: absolute;
-  background: yellow;
+  /* background: yellow; */
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -43,13 +43,19 @@ main {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+.notes::-webkit-scrollbar {
+  display: none;
+}
 .note {
-  height: 300px;
+  height: 120px;
   width: 100%;
   border-radius: 1rem;
-  background: red;
+  /* background: red; */
   padding: 3rem;
   margin-bottom:1rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 #background_image {
@@ -116,6 +122,7 @@ main {
   width: 100%;
   position: absolute;
   z-index: 2;
+  background: #252525;
   clip-path: circle(0% at 50% 50%);
   transition: clip-path 250ms ease;
 }

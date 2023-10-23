@@ -70,7 +70,9 @@ const setItemToLocalstoraeg = function (heading) {
 
 const getItemFromLocalstorage = function () {
   note = JSON.parse(localStorage.getItem(NoteHeading));
-  console.log(localStorage);
+  for(let key in localStorage) {
+    console.log(key);
+  };
   prevNotes();
 };
 
@@ -101,3 +103,13 @@ createbTn.addEventListener("click", function (e) {
 });
 
 console.log(Object.keys(localStorage));
+
+for(let key in localStorage) {
+  localStorage.getItem(key)
+  previos.insertAdjacentHTML = `<section class="note">${localStorage.getItem(key).title}</section>`;
+      const newSection = document.createElement("section");
+      newSection.classList.add("note");
+      newSection.textContent = `${localStorage.getItem(key).title}`;
+      previos.insertBefore(newSection, previos.children[0]);
+      newSection.style.backgroundColor = localStorage.getItem(key).color;
+};

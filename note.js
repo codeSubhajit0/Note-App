@@ -26,6 +26,7 @@ class App {
 // This is used for initial loding of notes and add some data to local storage
 const initial = function () {
   note = JSON.parse(localStorage.getItem("notes"));
+  console.log(note);
   note.forEach((element, index) => {
     const newSection = document.createElement("section");
     newSection.classList.add("note");
@@ -93,4 +94,5 @@ createbTn.addEventListener("click", function (e) {
   notes.push(new App(NoteHeading, NoteContent, colorMain));
   setItemToLocalstoraeg();
   getItemFromLocalstorage();
+  initial();
 });

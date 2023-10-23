@@ -13,7 +13,9 @@ const previos = document.querySelector(".notes");
 let note;
 let colorMain = "var(--color-1)";
 
-const notes = [];
+let notes = {};  
+let NoteHeading;
+
 
 class App {
   constructor(title, text, color) {
@@ -27,13 +29,13 @@ class App {
 const initial = function () {
   note = JSON.parse(localStorage.getItem("notes"));
   console.log(note);
-  note.forEach((element, index) => {
-    const newSection = document.createElement("section");
-    newSection.classList.add("note");
-    newSection.textContent = `${element.title}`;
-    previos.insertBefore(newSection, previos.children[0]);
-    newSection.style.backgroundColor = element.color;
-  });
+  // note.forEach((element, index) => {
+  //   const newSection = document.createElement("section");
+  //   newSection.classList.add("note");
+  //   newSection.textContent = `${element.title}`;
+  //   previos.insertBefore(newSection, previos.children[0]);
+  //   newSection.style.backgroundColor = element.color;
+  // });
 };
 initial();
 
@@ -61,38 +63,41 @@ colorSlide.addEventListener("click", function (e) {
   createbTn.style.backgroundColor = `var(--color-${color})`;
 });
 
-const setItemToLocalstoraeg = function () {
-  localStorage.setItem("notes", JSON.stringify(notes));
+const setItemToLocalstoraeg = function (heading) {
+  console.log(notes);
+  localStorage.setItem(heading, JSON.stringify(notes));
 };
 
 const getItemFromLocalstorage = function () {
-  note = JSON.parse(localStorage.getItem("notes"));
-  console.log(note);
-  prevNotes(note);
+  note = JSON.parse(localStorage.getItem(NoteHeading));
+  console.log(localStorage);
+  prevNotes();
 };
 
-const prevNotes = function (notes) {
-  // previos.insertAdjacentHTML = `<section class="note">${note[0].title}</section>`;
-  notes.forEach((element, index) => {
-    if (index == notes.length - 1) {
-      const newSection = document.createElement("section");
-      newSection.classList.add("note");
-      newSection.textContent = `${element.title}`;
-      previos.insertBefore(newSection, previos.children[0]);
-      newSection.style.backgroundColor = element.color;
-    }
-  });
-};
+// const prevNotes = function () {
+//   // previos.insertAdjacentHTML = `<section class="note">${note[0].title}</section>`;
+//   localStorage.forEach((element, index) => {
+//     if (index == notes.length - 1) {
+//       const newSection = document.createElement("section");
+//       newSection.classList.add("note");
+//       newSection.textContent = `${element.title}`;
+//       previos.insertBefore(newSection, previos.children[0]);
+//       newSection.style.backgroundColor = element.color;
+//     }
+//   });
+// };
 
 // Functionality of the create button
 createbTn.addEventListener("click", function (e) {
-  let NoteHeading = heading.value;
+  NoteHeading = heading.value;
   let NoteContent = textNote.value;
   console.log(NoteContent);
   heading.value = "";
   textNote.value = "";
-  notes.push(new App(NoteHeading, NoteContent, colorMain));
-  setItemToLocalstoraeg();
+  notes = new App(NoteHeading, NoteContent, colorMain);
+  setItemToLocalstoraeg(NoteHeading);
   getItemFromLocalstorage();
   initial();
 });
+
+console.log(Object.keys(localStorage));

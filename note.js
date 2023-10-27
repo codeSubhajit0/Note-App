@@ -103,13 +103,15 @@ createbTn.addEventListener("click", function (e) {
 });
 
 console.log(Object.keys(localStorage));
-
+// localStorage.clear();
 for(let key in localStorage) {
-  localStorage.getItem(key)
-  previos.insertAdjacentHTML = `<section class="note">${localStorage.getItem(key).title}</section>`;
+  if(localStorage.getItem(key)){
+    //  previos.insertAdjacentHTML = `<section class="note">${JSON.parse(localStorage.getItem(key)).title}</section>`;
       const newSection = document.createElement("section");
       newSection.classList.add("note");
-      newSection.textContent = `${localStorage.getItem(key).title}`;
+      newSection.textContent = `${JSON.parse(localStorage.getItem(key)).title}`;
       previos.insertBefore(newSection, previos.children[0]);
-      newSection.style.backgroundColor = localStorage.getItem(key).color;
+      newSection.style.backgroundColor = JSON.parse(localStorage.getItem(key)).color;
+      console.log(JSON.parse(localStorage.getItem(key)).title);
+  }
 };

@@ -1,1 +1,0 @@
-## CLICK THE [LINK](https://codesubhajit0.github.io/Note-App/) TO VISIT THE PAGE

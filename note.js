@@ -24,19 +24,19 @@ class App {
 }
 
 // This is used for initial loding of notes and add some data to local storage
-const initial = function () {
-  note = JSON.parse(localStorage.getItem("notes"));
-  if(note==null) return
-  console.log(note);
-  note.forEach((element, index) => {
-    const newSection = document.createElement("section");
-    newSection.classList.add("note");
-    newSection.textContent = `${element.title}`;
-    previos.insertBefore(newSection, previos.children[0]);
-    newSection.style.backgroundColor = element.color;
-  });
-};
-initial();
+// const initial = function () {
+//   note = JSON.parse(localStorage.getItem("notes"));
+//   if(note==null) return
+//   console.log(note);
+//   note.forEach((element, index) => {
+//     const newSection = document.createElement("section");
+//     newSection.classList.add("note");
+//     newSection.textContent = `${element.title}`;
+//     previos.insertBefore(newSection, previos.children[0]);
+//     newSection.style.backgroundColor = element.color;
+//   });
+// };
+// initial();
 
 // Opening the new note form 
 newBtn.addEventListener("click", function (e) {
